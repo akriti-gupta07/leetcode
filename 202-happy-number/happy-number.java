@@ -11,16 +11,14 @@ class Solution {
         while(slow!=fast){
             slow=square(slow);
             fast= square(square(fast));
-            if (slow==1){
+            if (slow==1 || fast==1){
                 return true;
             }
             
 
         }
-        if (slow==1){
-                return true;
-            }
-        return false;
+        
+        return slow==1;
 
         
     }
