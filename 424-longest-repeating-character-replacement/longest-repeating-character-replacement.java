@@ -7,14 +7,14 @@ class Solution {
         for(int r=0;r<s.length();r++){
             arr[s.charAt(r)-'A']++;
             maxf=Math.max(maxf,arr[s.charAt(r)-'A']);
-            windows=r-l+1;
+            
 
-            if( windows-maxf >k){
+            while( ((r-l+1)-maxf) >k){
                 arr[s.charAt(l) -'A']--;
                 l++;
             }
-            windows = r-l+1 ;
-            result= Math.max(result,windows);
+            
+            result= Math.max(result,r-l+1);
         }
         return result;
 
